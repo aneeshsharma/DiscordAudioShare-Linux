@@ -1,14 +1,30 @@
 #!/bin/bash
 
-#app_name="TowerOfTime.x86_64"
+my_dir=$(dirname "$0")
+
 app_name="$1"
 
+if [[ $XDG_CONFIG_HOME ]]; then
+    config_dir=$XDG_CONFIG_HOME/discordaudioshare
+elif [[ $HOME ]]; then
+    config_dir=$HOME/.config/discordaudioshare
+else
+    echo "Unable to get config home"
+fi
 
-# grabbing of the hardware audio output device id
-audio_output=$(pactl list sinks | grep "Name:" |grep "USB"| head -1 | perl -pe 's/^.*?Name: (.*)$/$1/')
+config_file=$config_dir/devices.sh
 
-# grabbing of microphone device id
-mic_input=$(pactl list sources | grep "Name:" | grep "USB" | tail -1 | perl -pe 's/^.*?Name: (.*)$/$1/')
+source $config_file
+
+if [[ -z $audio_output ]]; then
+    echo "No output device set"
+    exit
+fi
+
+if [[ -z $mic_input ]]; then
+    echo "No input device set"
+    exit
+fi
 
 # grabbing sink input id for specified application name
 app_id=$(pactl list sink-inputs | perl -0x00 -ne '''

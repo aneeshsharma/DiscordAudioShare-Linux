@@ -8,6 +8,6 @@ IS_VALID=$(pactl list short clients | cut -f 3 | tail -n +2 | grep $APP_NAME)
 # If input application received
 if [[ $IS_VALID ]]; then
     if [[ $APP_NAME ]]; then
-        $my_dir/shareaudio.sh $APP_NAME
+        bash $my_dir/shareaudio.sh $APP_NAME
     fi
 fi
