@@ -42,3 +42,6 @@ Running `toggleaudioshare.sh` again would stop sharing audio.
 - `shareaudioprompt.sh` - Opens a prompt to select an application to share audio of
 - `shareaudio.sh <application_name>` - Starts sharing audio of the `<application_name>`
 - `stopshareaudio.sh` - Stops sharing audio
+
+## Credits
+The share audio script was taken from a [reddit post here](https://www.reddit.com/r/linux_gaming/comments/hwq6qq/comment/fz3vbxi/?utm_source=share&utm_medium=web2x&context=3)
