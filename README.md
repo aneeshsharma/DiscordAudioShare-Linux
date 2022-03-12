@@ -58,9 +58,10 @@ chmod +x uninstall.sh
 ## Usage
 
 When running `discordaudioshare`, a prompt shows up asking you to select an application.
-You can select the application you want to share audio of from there. **Make sure
-the application is playing audio before selecting**. If the application isn't playing any audio,
-nothing would happen.
+You can select the application you want to share audio of from there.
+- **Make sure the application is playing audio before selecting**. If the application isn't
+  playing any audio, nothing would happen.
+- **You should be in a discord call** before using this
 
 Running `discordaudioshare` again would stop sharing audio.
 
