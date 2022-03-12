@@ -72,4 +72,6 @@ Running `discordaudioshare` again would stop sharing audio.
 - `stopshareaudio.sh` - Stops sharing audio
 
 ## Credits
-The share audio script was taken from a [reddit post here](https://www.reddit.com/r/linux_gaming/comments/hwq6qq/comment/fz3vbxi/?utm_source=share&utm_medium=web2x&context=3)
+Special thanks to [@hotmonkeywings](https://github.com/hotmonkeywings) for writing the share audio script.
+
+The share audio script was referenced and altered from a [reddit post here](https://www.reddit.com/r/linux_gaming/comments/hwq6qq/comment/fz3vbxi/?utm_source=share&utm_medium=web2x&context=3)
