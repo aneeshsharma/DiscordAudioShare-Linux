@@ -7,12 +7,14 @@ bin_dir=/usr/bin
 
 # Create the installation directory if doesn't exist
 sudo mkdir -p $installation_dir
+sudo mkdir -p $bin_dir
 
 # Copy files to installation director
 sudo cp shareaudio.sh shareaudioprompt.sh stopshareaudio.sh toggleaudioshare.sh $installation_dir
 
 # Install command
-sudo cp discordaudioshare $bin_dir/discordaudioshare
+sudo bash -c "echo '#!/bin/sh' > $bin_dir/discordaudioshare"
+sudo bash -c "echo 'bash $installation_dir/toggleaudioshare.sh' >> $bin_dir/discordaudioshare"
 sudo chmod +x $bin_dir/discordaudioshare
 
 output_devices=$(pactl list short sinks | cut -f 2)
