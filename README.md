@@ -6,9 +6,15 @@ source, which is then used by discord as the input device.
 
 ## Installation
 
-This utility uses [Rofi](https://github.com/davatorium/rofi) to create a prompt
+### Prerequisites
+
+- Pulseaudio is required
+- This utility uses [Rofi](https://github.com/davatorium/rofi) to create a prompt
 to select an application. Follow the [installation instructions](https://github.com/davatorium/rofi/blob/next/INSTALL.md#install-distribution)
 to install rofi.
+
+
+### Installing `discordaudioshare`
 
 Clone this repository to any directory you like
 
@@ -16,26 +22,47 @@ Clone this repository to any directory you like
 git clone https://github.com/aneeshsharma/DiscordAudioShare-Linux
 ```
 
-Now, running `toggleaudioshare.sh` should open a prompt asking you to select an
-application to share your audio with. Running this again would stop sharing the
-audio (Hence, "toggle")
+To install, run `install.sh`
 
-I recommend setting a keyboard shortcut to this script. Using [`sxhkd`](https://github.com/baskerville/sxhkd),
-you can add the following
+```bash
+cd DiscordAudioShare-Linux
+chmod +x install.sh
+./install.sh
+```
 
-```sxhkd
+The install script will ask for sudo password.
+
+Run `discordaudioshare` to launch a rofi prompt asking you to select the application
+to share audio of.
+
+Now, you can add a hotkey/shortcut using any hotkey utility to `discordaudioshare`.
+For example, in `sxhkd`, you can add the following
+
+```
+# Discord Audio Share
 super + a
-    /path/to/DiscordAudioShare-Linux/toggleaudioshare.sh
+    discordaudioshare
+```
+
+## Uninstall
+
+To uninstall `discordaudioshare`, clone this repository and run `uninstall.sh`
+
+```bash
+git clone https://github.com/aneeshsharma/DiscordAudioShare-Linux
+cd DiscordAudioShare-Linux
+chmod +x uninstall.sh
+./uninstall.sh
 ```
 
 ## Usage
 
-When running `toggleaudioshare.sh`, a prompt shows up asking you to select an application.
-You can select the application you want to share audio of from there. Make sure
-the application is playing audio before selecting. If the application isn't playing any audio,
+When running `discordaudioshare`, a prompt shows up asking you to select an application.
+You can select the application you want to share audio of from there. **Make sure
+the application is playing audio before selecting**. If the application isn't playing any audio,
 nothing would happen.
 
-Running `toggleaudioshare.sh` again would stop sharing audio.
+Running `discordaudioshare` again would stop sharing audio.
 
 ## Scripts
 
