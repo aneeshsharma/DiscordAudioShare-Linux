@@ -72,6 +72,8 @@ pactl load-module module-loopback source=${mic_input} sink=MicPlusGame
 pactl load-module module-loopback source=GameOnly.monitor sink=MicPlusGame
 
 # redirecting, could also be done in pulse audio gui 
-pactl move-source-output ${discord_id} MicPlusGame.monitor
+pactl move-source-output ${discord_id} MicPlusGame.monitor || {
+    bash $my_dir/stopshareaudio.sh
+}
 pactl move-sink-input ${app_id} GameOnly
 paplay /usr/share/sounds/freedesktop/stereo/service-login.oga &

@@ -4,6 +4,9 @@ A simple utility allowing you to share audio when using discord on linux. This
 works by routing your application audio and your mic input into a single audio
 source, which is then used by discord as the input device.
 
+In order to know the pulseaudio name for you devices, try checking the input 
+and output names used on discord. They will be similiar to the ones in pulseaudio.
+
 **NOTE:** This only works on the Discord Client.
 
 ## Installation
