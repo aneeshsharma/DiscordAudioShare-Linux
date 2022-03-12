@@ -4,10 +4,13 @@ A simple utility allowing you to share audio when using discord on linux. This
 works by routing your application audio and your mic input into a single audio
 source, which is then used by discord as the input device.
 
+In order to know the pulseaudio name for your devices, try checking the input and output names used on discord. They will be similiar to the ones in pulseaudio.
+
 ## Installation
 
 ### Prerequisites
 
+- Discord App (We currently do not have support for Discord on the browser)
 - Pulseaudio is required
 - This utility uses [Rofi](https://github.com/davatorium/rofi) to create a prompt
 to select an application. Follow the [installation instructions](https://github.com/davatorium/rofi/blob/next/INSTALL.md#install-distribution)
